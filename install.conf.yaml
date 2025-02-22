@@ -1,0 +1,76 @@
+- defaults:
+    link:
+      relink: true
+      create: true
+
+- link:
+    # ~/.gitconfig: gitconfig
+    # ~/.yabairc: yabairc
+    # ~/.aerospace.toml: aerospace.toml
+    # ~/.gitconfig-gitlab: gitconfig-gitlab
+    ~/.gitignore: gitignore
+    ~/.zshrc: zshrc
+    ~/.tmux.conf: tmux.conf
+    ~/.wezterm.lua: wezterm.lua
+    ~/.ripgreprc: ripgreprc
+    # ~/.config/karabiner.edn: karabiner.edn
+    # ~/.config/nvim/stylua.toml: stylua.toml
+    # ~/.config/fastfetch/config.jsonc: fastfetch/config.jsonc
+    # ~/.config/borders/bordersrc: bordersrc
+    ~/Library/Application Support/lazygit/config.yml: lazygit/config.yml
+    ~/.config/nvim/:
+      glob: true
+      force: true
+      path: nvim/**
+    ~/.config/raycast/:
+      glob: true
+      force: true
+      path: raycast/**
+    # ~/.config/ghostty/:
+    #   glob: true
+    #   force: true
+    #   path: ghostty/**
+    # ~/.config/bat/:
+    #   glob: true
+    #   force: true
+    #   path: bat/**
+    # ~/.config/yazi/:
+    #   glob: true
+    #   force: true
+    #   path: yazi/**
+    # ~/.config/atuin/:
+    #   glob: true
+    #   force: true
+    #   path: atuin/**
+    # ~/.config/sketchybar/:
+    #   glob: true
+    #   force: true
+    #   path: sketchybar/**
+    # ~/Library/Application Support/xbar:
+    #   glob: true
+    #   force: true
+    #   path: xbar/**
+    # ~/Library/Application Support/espanso:
+    #   glob: true
+    #   force: true
+    #   path: espanso/**
+
+- create:
+    - ~/Library/Application Support/xbar
+    - ~/Library/Application Support/lazygit
+
+- shell:
+    # - description: "Installing wezterm terminfo file"
+    #   command: "sh wezterm/install"
+    # - description: "Rebuilding bat themes cache"
+    #   command: "bat cache --build"
+    # - description: "Installing submodules"
+    #   command: "git submodule update --init --recursive"
+    - description: "Installing brew packages using ~/.dotfiles/Brewfile"
+      command: "if command -v brew > /dev/null; then brew bundle; fi"
+    - description: "Installing tmuxu plugin manager"
+      command: "if test ! -d ~/.tmux/plugins/tpm; then git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm && ~/.tmux/plugins/tpm/bin/install_plugins; fi"
+    # - description: "Installing SBarLua"
+    #   command: "(git clone https://github.com/FelixKratz/SbarLua.git /tmp/SbarLua && cd /tmp/SbarLua/ && make install && rm -rf /tmp/SbarLua/)"
+    # - description: "Installing sketchybar font"
+    #   command: "curl -L https://github.com/kvndrsslr/sketchybar-app-font/releases/download/latest/sketchybar-app-font.ttf -o $HOME/Library/Fonts/sketchybar-app-font.ttf"
