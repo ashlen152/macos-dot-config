@@ -90,6 +90,8 @@ source $ZSH/oh-my-zsh.sh
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
+export TMUX_PLUGIN_MANAGER_PATH="~/.tmux/plugins/tpm"
+
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 

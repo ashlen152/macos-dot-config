@@ -14,6 +14,12 @@ tap "ttscoff/thelab"
 tap "yqrashawn/goku"
 # Code searching, linting, rewriting
 brew "ast-grep"
+# zplug
+brew "zplug"
+# starship terminal theme
+brew "starship"
+#node manager package
+brew "fnm"
 # Improved shell history for zsh, bash, fish and nushell
 brew "atuin"
 # Cryptography and SSL/TLS Toolkit
